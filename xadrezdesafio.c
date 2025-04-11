@@ -1,30 +1,45 @@
 #include <stdio.h>
 
-int main () {
-
-int bispo = 1, rainha , torre = 1, cavalo = 1 ;
-
-while (torre <= 5) {
-    printf ("Torre - para Direita!\n");
-    torre ++ ;
-}
-do {
-    printf ("Bispo - Cima/Diagonal Direita!\n");
-    bispo ++ ;
-} while (bispo <= 5);
-
-for (rainha = 1; rainha <=8; rainha ++){
-    printf ("Rainha - para Esquerda\n");
-}
-
-while (cavalo--){
-
-    for (int i = 0; i < 2; i++){
-        printf ("Cavalo - para Baixo\n");
+void torre(int casas){
+    if (casas > 0){
+        printf ("Torre - para Direita!\n");
+        torre (casas -1);
     }
-printf ("Cavalo - para Esquerda\n");
+}
+void bispo(int casas){
+    if (casas > 0){
+        printf ("Bispo - Cima/Diagonal Direita!\n");
+        bispo (casas -1);
+    }
+}
+void rainha(int casas){
+    if (casas > 0){
+        printf ("Rainha - para Esquerda\n");
+        rainha (casas -1);
+    }
+}
+void cavalo1(int casas){
+    if (casas > 0){
+        printf ("Cavalo - para cima\n");
+        cavalo1 (casas -1); 
+    }
+}
+void cavalo1_2(int casas){
+    if (casas > 0){
+        printf ("Cavalo - para direita\n");
+        cavalo1_2 (casas -1); 
+    }
 }
 
+
+
+
+int main () {
+    torre (5);
+    bispo (5);
+    rainha (8);
+    cavalo1 (2);
+    cavalo1_2 (1);
 
 
 return 0;
